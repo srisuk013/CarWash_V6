@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 30
 
     defaultConfig {
         applicationId "com.example.carwash_v6"
         minSdk 21
-        targetSdk 31
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -33,11 +33,23 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.5.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // exposed
+    implementation "org.jetbrains.exposed:exposed-core:0.24.1"
+    implementation "org.jetbrains.exposed:exposed-dao:0.24.1"
+    implementation "org.jetbrains.exposed:exposed-jdbc:0.24.1"
+    implementation 'org.jetbrains.exposed:exposed-jodatime:0.24.1'
+    // mysql
+    implementation "mysql:mysql-connector-java:5.1.48"
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'androidx.multidex:multidex:2.0.1'
 }

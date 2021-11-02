@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#4267B2</color>
+    <color name="colorPrimaryDark">#2A5298</color>
+    <color name="colorAccent">#4267B2</color>
+    <color name="colorGray">#A1A1A1</color>
+    <color name="colorBgShadow">#66000000</color>
+    <color name="colorIconCamera">#4cda64</color>
+    <color name="colorSolid">#F1F0F0</color>
+    <color name="colorSplashScreenTop">#2A5298</color>
+    <color name="colorSplashScreenBottom">#1E3C72</color>
+    <color name="colorNavigation">#E9EBEE</color>
 </resources>
