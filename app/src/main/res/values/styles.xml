@@ -36,7 +36,7 @@
 
     <style name="Toolbar" parent="MatchWrap">
         <item name="android:background">@color/colorPrimary</item>
-        <item name="theme">@style/ToolbarThemeWhite</item>
+<!--        <item name="theme">@style/ToolbarThemeWhite</item>-->
     </style>
 
     <style name="ToolbarThemeWhite" parent="AppTheme">

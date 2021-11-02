@@ -3,7 +3,7 @@ package com.example.carwash_v6.presentation.main
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.carwash_v6.presentation.Profile.ProfileFragment
 import com.example.carwash_v6.R
@@ -19,7 +19,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val bottom_navigation=findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        val toolbar =findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar =findViewById<Toolbar>(R.id.toolbar)
         bottom_navigation.setOnNavigationItemSelectedListener(navListener)
         if (savedInstanceState == null)
             replaceFragment(HomeFragment())

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root_layout"
+    tools:context=".presentation.signup.SignUpActivity">
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        style="@style/MatchWrap"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar style="@style/Toolbar" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_back"
+            style="@style/ImageViewArrowBack" />
+
+        <ImageView
+            style="@style/ImageViewToolbar"
+            android:src="@drawable/ic_sign_up" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/EditText"
+        android:layout_gravity="center"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+        android:drawableStart="@drawable/ic_account_gray"
+        android:hint="@string/username" />
+
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/EditTextPassword"
+        android:layout_gravity="center"
+        android:imeOptions="actionDone" />
+
+    <ImageView
+        android:id="@+id/iv_toggle_repassword"
+        style="@style/ImageViewTogglePassword" />
+
+    <EditText
+        android:id="@+id/et_repassword"
+        style="@style/EditTextPassword"
+        android:layout_gravity="center"
+        android:hint="RePassword"
+        android:imeOptions="actionDone" />
+
+    <ImageView
+        android:id="@+id/iv_toggle_password"
+        style="@style/ImageViewTogglePassword" />
+
+    <EditText
+        android:id="@+id/et_fullname"
+        style="@style/EditText"
+        android:layout_gravity="center"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        android:drawableStart="@drawable/ic_account_gray"
+        android:hint="Full Name" />
+
+    <EditText
+        android:id="@+id/et_address"
+        style="@style/EditText"
+        android:layout_gravity="center"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        android:drawableStart="@drawable/ic_baseline_home_24"
+        android:hint="Address" />
+    <EditText
+        android:id="@+id/et_phone"
+        style="@style/EditText"
+        android:layout_gravity="center"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        android:drawableStart="@drawable/ic_phone_gray"
+        android:hint="Phone" />
+    <androidx.cardview.widget.CardView style="@style/CardViewButton">
+
+        <Button
+            android:id="@+id/bt_sign_in"
+            style="@style/ButtonBlueLong"
+            android:text="@string/sign_up" />
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
