@@ -1,6 +1,5 @@
 package com.example.carwash_v6.data.database
 
-import com.example.carwash_sn_v1.data.database.Role
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.jodatime.datetime
 
@@ -10,7 +9,6 @@ object User : Table("user") {
     val username = varchar("user_username", 10)
     val password = varchar("user_password", 8)
     val telephone = varchar("user_phone", 10)
-    val user_id_card = varchar("user_id_card",13)
     val role_id = integer("role_id").references(Role.role_id)
     val full_name = varchar("full_name", 50)
     val latitude =double("latitude")

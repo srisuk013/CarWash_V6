@@ -1,4 +1,4 @@
-package com.example.carwash_sn_v1.data.database
+package com.example.carwash_v6.data.database
 
 import com.example.carwash_v6.data.database.User
 import org.jetbrains.exposed.sql.Table

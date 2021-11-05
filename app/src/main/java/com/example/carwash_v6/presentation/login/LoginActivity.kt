@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.core.content.edit
-import com.example.carwash_sn_v1.data.request.LoginRequest
+import com.example.carwash_v6.data.request.LoginRequest
 import com.example.carwash_v6.presentation.main.MainActivity
 import com.example.carwash_v6.R
 import com.example.carwash_v6.presentation.signup.SignUpActivity

@@ -17,7 +17,7 @@ abstract class BaseFragment(@LayoutRes layout: Int) : Fragment(layout) {
         super.onCreate(savedInstanceState)
         val userId = context?.getSharedPreferences("file", MODE_PRIVATE)?.getInt("userId", 0)
         StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().permitAll().build())
-        val host = "192.168.132.167"
+        val host = "192.168.27.167"
         val databaseName = "carwash"
         val url = "jdbc:mysql://$host:3306/$databaseName?useUnicode=true&characterEncoding=utf-8"
         Database.connect(

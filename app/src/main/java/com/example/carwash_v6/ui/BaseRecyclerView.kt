@@ -22,14 +22,14 @@ abstract class BaseRecyclerView<T : Any> : RecyclerView.Adapter<BaseRecyclerView
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: BaseHolder, position: Int) {
-        holder.itemView onBindViewHolder list[position]
+        holder.itemView.onBindViewHolder(list[position], position)
     }
 
 
     @LayoutRes
     abstract fun getLayout(): Int
 
-    abstract infix fun View.onBindViewHolder(data: T)
+    abstract fun View.onBindViewHolder(data: T, position: Int)
 
     fun setList(list: List<T>?) {
         if (list != null) {

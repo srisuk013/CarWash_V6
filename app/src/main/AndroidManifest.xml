@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarWash_V6">
         <activity
+            android:name=".ChoosePackageActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.signup.SignUpActivity"
             android:exported="false" />
         <activity

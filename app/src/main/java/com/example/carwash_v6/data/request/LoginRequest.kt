@@ -1,4 +1,4 @@
-package com.example.carwash_sn_v1.data.request
+package com.example.carwash_v6.data.request
 
 data class LoginRequest(
     val username:String,
