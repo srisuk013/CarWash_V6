@@ -3,6 +3,7 @@ package com.example.carwash_v6.data.datasource
 import com.example.carwash_v6.data.database.*
 import com.example.carwash_v6.data.map.*
 import com.example.carwash_v6.data.models.*
+import com.example.carwash_v6.data.request.BookingJobRequest
 import com.example.carwash_v6.data.request.InsertCarRequest
 import com.example.carwash_v6.data.request.LoginRequest
 import com.example.carwash_v6.data.response.LoginResponse
@@ -11,6 +12,7 @@ import com.example.carwash_v6.data.response.BaseResponse
 import com.example.carwash_v6.data.response.SignupResponse
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.joda.time.DateTime
 
 object DataSourceImpl : DataSource {
     override fun login(req: LoginRequest): LoginResponse {
@@ -168,10 +170,10 @@ object DataSourceImpl : DataSource {
                 addLogger(StdOutSqlLogger)
                 Car.insert {
                     it[userId] = req.userId!!.toInt()
-                    it[car_registration]= req.car_registration
-                    it[car_make_name]=req.carMake_name!!
-                    it[car_model_name]=req.carModel_name!!
-                    it[province]=req.province!!
+                    it[car_registration] = req.car_registration
+                    it[car_make_name] = req.carMake_name!!
+                    it[car_model_name] = req.carModel_name!!
+                    it[province] = req.province!!
                 }
             }
             val result = statement.resultedValues?.size == 1
@@ -181,7 +183,7 @@ object DataSourceImpl : DataSource {
         return response
     }
 
-    override fun myCar(req:Int):List<MyCarModel>{
+    override fun myCar(req: Int): List<MyCarModel> {
         return transaction {
             addLogger(StdOutSqlLogger)
             (Car)
@@ -194,6 +196,42 @@ object DataSourceImpl : DataSource {
                 ).select { Car.userId eq req }
                 .map { MyCarMap.toMyCarMap(it) }
         }
+    }
+
+    override fun profile(userId: Int): ProfileModel {
+        return transaction {
+            addLogger(StdOutSqlLogger)
+            User
+                .slice(
+                    User.full_name,
+                    User.telephone,
+                )
+                .select { User.user_id eq userId }
+                .map { ProfileMap.toProfileMap(it) }
+                .single()
+        }
+    }
+
+    override fun bookingJob(req: BookingJobRequest,user:Int): BaseResponse {
+        val response = BaseResponse()
+        val statement = transaction {
+            addLogger(StdOutSqlLogger)
+            Job.insert {
+                it[Job.user_id] =user
+                it[Job.car_id] = req.car_id!!
+                it[Job.employee_id] = 0
+                it[Job.latitude] = req.latitude!!
+                it[Job.longitude] = req.longitude!!
+                it[Job.package_id] = req.package_id!!
+                it[Job.job_date] =DateTime.now().millis
+                it[Job.pay_id] = 0
+                it[Job.status_id] = 0
+            }
+        }
+        val result = statement.resultedValues?.size == 1
+        response.success = result
+        response.message = "Insert success"
+        return response
     }
 
 }

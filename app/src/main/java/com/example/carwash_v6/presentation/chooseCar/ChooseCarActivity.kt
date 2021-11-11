@@ -29,7 +29,7 @@ class ChooseCarActivity : BaseActivity() {
         adt.setList(data)
         adt.onClick ={
             val intent = Intent(baseContext, ChooseMapActivity::class.java).apply {
-                putExtra("package",it.carId)
+                putExtra("carId",it.carId)
                 putExtra("packageId",packageId)
             }
             startActivity(intent)

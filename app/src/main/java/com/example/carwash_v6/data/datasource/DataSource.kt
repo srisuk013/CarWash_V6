@@ -1,6 +1,7 @@
 package com.example.carwash_v6.data.datasource
 
 import com.example.carwash_v6.data.models.*
+import com.example.carwash_v6.data.request.BookingJobRequest
 import com.example.carwash_v6.data.request.InsertCarRequest
 import com.example.carwash_v6.data.request.LoginRequest
 import com.example.carwash_v6.data.response.LoginResponse
@@ -19,4 +20,6 @@ interface DataSource {
     fun carModel(req:Int):List<CarModel>
     fun insertCar(req: InsertCarRequest): BaseResponse
     fun myCar(req:Int):List<MyCarModel>
+    fun profile(userId: Int): ProfileModel
+    fun bookingJob(req: BookingJobRequest,user:Int): BaseResponse
 }

@@ -18,7 +18,7 @@ class HomeAdepter:BaseRecyclerView<PackageModel>() {
         tvPrice=findViewById(R.id.tv_price)
 
         tvNamePackage.text=data.packageName
-        tvPrice.text=data.packagePrice.toString()
+        tvPrice.text=data.packagePrice.toString()+".00"
 
         setOnClickListener {
             listener?.invoke(data)
