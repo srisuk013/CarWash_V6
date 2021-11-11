@@ -3,6 +3,8 @@
     package="com.example.carwash_v6">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarWash_V6">
+        <activity
+            android:name=".presentation.choosemap.ChooseMapActivity"
+            android:exported="true" >
+<!--        <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".presentation.chooseCar.ChooseCarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.addcar.AddMyCarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.mycar.MyCarActivity"
+            android:exported="false" />
         <activity
             android:name=".ChoosePackageActivity"
             android:exported="false" />
@@ -29,6 +49,9 @@
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="true" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>

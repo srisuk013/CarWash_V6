@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.mycar.MyCarActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        style="@style/MatchWrap"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar" />
+
+
+        <ImageView
+            android:id="@+id/iv_arrow_back"
+            style="@style/ImageViewArrowBack" />
+
+        <ImageView
+            style="@style/ImageViewToolbar"
+            android:src="@drawable/ic_my_car" />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_mycar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_mycar"
+        android:layout_below="@+id/relativeLayout" />
+
+    <ImageView
+        android:id="@+id/iv_addcar"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="500dp"
+        android:src="@drawable/ic_baseline_directions_car_24"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+
+
+
+
+</RelativeLayout>

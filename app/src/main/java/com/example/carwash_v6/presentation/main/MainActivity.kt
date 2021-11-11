@@ -1,10 +1,12 @@
 package com.example.carwash_v6.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.carwash_v6.presentation.mycar.MyCarActivity
 import com.example.carwash_v6.presentation.Profile.ProfileFragment
 import com.example.carwash_v6.R
 import com.example.carwash_v6.presentation.History.HistoryFragment
@@ -52,7 +54,9 @@ class MainActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.option_change_mycar ->startActivity(Intent(baseContext, MyCarActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
